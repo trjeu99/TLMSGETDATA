@@ -23,7 +23,9 @@ select TA001+'-'+RTRIM(TA002)+';'+TA003+';'+TA004+';'+ RTRIM(TA006),  RTRIM(TC04
 left join SFCTC on TA001 = TC004 and TA002 = TC005
 where 1=1
 and TA004 = 'B01'
+or  TA004 = 'B02'
 and TA011+TA012 <TA010
+and CAST(TA008 AS date ) >= '20200101'
 group by TA001,TA002,TA003,TA004, TA006, TA010, TA011,TA012, TC047
 ");
                 DataTable dtshow = new DataTable();
